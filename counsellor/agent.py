@@ -12,7 +12,7 @@ from google.genai import types
 from logging_config import counsellor_logger, a2a_logger
 from google.adk.models import Gemini
 
-model = Gemini(model="gemini-flash-latest")
+model = Gemini(model=os.environ.get("MODEL_NAME", "gemini-flash-latest"))
 
 RESEARCHER_URL = os.environ.get("RESEARCHER_URL", "http://localhost:8001")
 

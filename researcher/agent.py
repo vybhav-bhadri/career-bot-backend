@@ -16,7 +16,7 @@ except ImportError as e:
 from google.adk.models import Gemini
 from db.json_store import save_career_info as _save_career_info, lookup_career_info as _lookup_career_info
 
-model = Gemini(model="gemini-flash-latest")
+model = Gemini(model=os.environ.get("MODEL_NAME", "gemini-flash-latest"))
 
 def save_career_info(interest: str, career_title: str, description: str, 
                      salary_range: str = "", skills: str = "") -> str:
